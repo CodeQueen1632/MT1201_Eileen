@@ -1,5 +1,7 @@
 /*
- Name Eileen */
+ Name Eileen 
+ Making a house with door and window*/
+ 
  function setup() {
   createCanvas(600, 600);}
 
