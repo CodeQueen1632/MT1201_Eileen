@@ -6,9 +6,15 @@ function setup() {
 }
 
 function draw() {
-  background(255,200,255);
+  background("lightblue");
+  strokeWeight(10);
+  fill(255,255,255);
   square(150,250,200);
   triangle(150,250,250,150,350,250);
+  strokeWeight(5);
+  fill("red");
+  circle(250,350,50);
+  
 }
   
 
