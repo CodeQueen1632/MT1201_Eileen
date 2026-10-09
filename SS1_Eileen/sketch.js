@@ -1,18 +1,29 @@
-/*
- Name Eileen 
- Making a house with door and window*/
- 
- function setup() {
-  createCanvas(600, 600);}
+/* SS1_Eileen2
+this is my house*/
+
+function setup() {
+  createCanvas (500, 500);
+}
 
 function draw() {
-  background("green");
-
-ellipse(200,200,200,200,5);
-push()
-fill(255,0,0);
-
-rect(50,100,50,100);
-pop()
-
+  background("lightblue");
+  strokeWeight(10);
+  fill(255,255,255);
+  square(150,250,200);
+  triangle(150,250,250,150,350,250);
+  strokeWeight(5);
+  fill("red");
+  circle(250,350,50);
+  
 }
+  
+
+
+
+
+
+  
+  
+  
+  
+
