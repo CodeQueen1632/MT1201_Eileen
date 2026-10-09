@@ -16,7 +16,7 @@ if(key==" ")
 
 function  mousePressed(){
 
- else (key == "")
+ else
   fill("red")
 
 }
