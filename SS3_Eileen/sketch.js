@@ -7,7 +7,7 @@ function setup() {
   createCanvas(400, 400);
   fill("orange"); 
 }
-// giving the kite, its frame * 
+// giving the kite, its frame and cloud and sun* 
 function draw() {
   background("lightblue");
   let topx = centerR - halfH;
