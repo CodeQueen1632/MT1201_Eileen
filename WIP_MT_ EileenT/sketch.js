@@ -4,6 +4,7 @@ let centerR = 200
 let centerD = 200
 let sizeH = 50
 let time = "M"
+
 function setup() {
   createCanvas(600, 600);
 }
@@ -14,9 +15,11 @@ function draw(){
  }
 else if(time == "A"){
   AfternoonScene();
+
 }
 else if(time == "N"){
   NightScene();
+
 }
 
 }
@@ -50,6 +53,7 @@ function MorningScene() {
 }
   //the kite 
   function Kite(){
+    fill ("blue");
   let topx = centerR - sizeH;
   let topy = centerD;
   let rightx = centerR;
@@ -75,6 +79,7 @@ function MorningScene() {
   strokeWeight(5);
 
   //giving the kite it cross lines* 
+
   line(topx,topy,bottomx,bottomy);
   line(leftx,lefty,rightx,righty);
 
@@ -83,15 +88,16 @@ function mousePressed(){
   centerR = 0}
 
 function keyPressed(){
-  if(key == "a"){
-    time = "A"
+  if(key == "m"){
+    time = "M"
     
   }
-  else if (key == "m"){
-    time = "M"
+  else if (key == "a"){
+    time = "A"
   } 
   else if(key == "n"){
-    time = "N"
+    time = "N"}
+
 } 
 
 
@@ -122,46 +128,78 @@ function AfternoonScene(){
   fill("coral");  
   triangle(150,250,250,150,350,250);
   strokeWeight(5);
+  
+  acloud(75,90,90,75);
+  
+  acloud(195,90,130,75);
+  fill("orange");
+  sun(500,10,150);
+  Kite();
+}
+  function acloud(skyX,skyY,skyW,skyH){
+  push();
+  noStroke()
+  fill("gray");
+  ellipse(skyX,skyY,skyW,skyH);
+  ellipse(skyX + skyW /2,skyY + skyH /3.5,skyW /2,skyH /2);
+  pop()
+
+  function sun(sunx,suny,sunw){
+  push()
+  fill("orange");
+stroke("goldenrod"); 
+  circle(sunx,suny,sunw);
+  pop()
+}
 
 
   // adding two windows to the house
-  fill("white");
+  fill("pink");
   square(175,275,50);
-  fill("white"); 
+  fill("pink"); 
   square(270,275,50);
   fill("red"); 
   rect(223,350,50,100);
-  stroke("tan");
+  stroke("brown");
   strokeWeight(5); 
+  fill ("gray");
   cloud(75,90,90,75);
   cloud(195,90,130,75);
-  fill("lightyellow");
+  fill("orange");
   sun(500,10,150);
   Kite(); 
 }
 function NightScene(){
  
-  background("lightgray");
+  background("gray");
  strokeWeight(10);
-  fill(196, 164, 132);
+  fill("blue");
   square(150,250,200);
-  fill("coral");  
+  fill("black");  
   triangle(150,250,250,150,350,250);
-  strokeWeight(5);
-
+  strokeWeight(5); 
+  fill("lightgray")
+  cloud(75,90,90,75);
+  fill("lightgray")
+  cloud(195,90,130,75);
+  fill("gray");
+  sun(500,10,150);
+  Kite(); 
 }
+{
   // adding two windows to the house
-  fill("white");
+  fill("gray");
   square(175,275,50);
-  fill("white"); 
+  fill("gray"); 
   square(270,275,50);
   fill("red"); 
   rect(223,350,50,100);
   stroke("tan");
   strokeWeight(5); 
+  fill("gray")
   cloud(75,90,90,75);
   cloud(195,90,130,75);
-  fill("lightyellow");
+   fill("gray");
   sun(500,10,150);
   Kite(); 
 }
