@@ -45,15 +45,17 @@ function MorningScene() {
   rect(223,350,50,100);
   stroke("tan");
   strokeWeight(5); 
-  cloud(75,90,90,75);
-  cloud(195,90,130,75);
+  cloud(75,90,90,75,"lightskyblue");
+  cloud(195,90,130,75,"skyblue");
   fill("lightyellow");
   sun(500,10,150);
-  Kite();
+  Kite("white","purple");
 }
   //the kite 
-  function Kite(){
-    fill ("white");
+  function Kite(colora, colorb){
+    push()
+    fill (colora);
+    stroke(colorb);
   let topx = centerR - sizeH;
   let topy = centerD;
   let rightx = centerR;
@@ -74,15 +76,15 @@ function MorningScene() {
   if(centerR > sizeH + width ){
     centerR = 0
   }
+
   
-  stroke("tan");
   strokeWeight(5);
 
   //giving the kite it cross lines* 
 
   line(topx,topy,bottomx,bottomy);
   line(leftx,lefty,rightx,righty);
-
+  pop()
 }
 function mousePressed(){
   centerR = 0}
@@ -108,10 +110,10 @@ stroke("goldenrod");
   pop()
 }
 
-function cloud(skyX,skyY,skyW,skyH){
+function cloud(skyX,skyY,skyW,skyH, color){
   push();
   noStroke()
-  fill("white");
+  fill(color);
   ellipse(skyX,skyY,skyW,skyH);
   ellipse(skyX + skyW /2,skyY + skyH /3.5,skyW /2,skyH /2); 
   pop()
@@ -121,38 +123,12 @@ function AfternoonScene(){
 
  
   background("lightgray");
- strokeWeight(10);
+  strokeWeight(10);
   fill(196, 164, 132);
   square(150,250,200);
   fill("coral");  
   triangle(150,250,250,150,350,250);
   strokeWeight(5);
-  
-  acloud(75,90,90,75);
-  acloud(195,90,130,75);
-  acloud(290,90, 230,75);
-  fill("orange");
-  sun(500,10,150);
-  Kite();
-}
-  function acloud(skyX,skyY,skyW,skyH){
-  push();
-  noStroke()
-  fill("gray");
-  ellipse(skyX,skyY,skyW,skyH);
-  ellipse(skyX + skyW /2,skyY + skyH /3.5,skyW /2,skyH /2);
-  pop()
-
-  function sun(sunx,suny,sunw){
-  push()
-  fill("orange");
-stroke("goldenrod"); 
-  circle(sunx,suny,sunw);
-  pop()
-}
-
-
-  // adding two windows to the house
   fill("pink");
   square(175,275,50);
   fill("pink"); 
@@ -162,12 +138,33 @@ stroke("goldenrod");
   stroke("brown");
   strokeWeight(5); 
   fill ("gray");
-  bcloud(75,90,90,75);
-  bcloud(195,90,130,75);
+  cloud(75,90,90,75,"coral");
+  cloud(195,90,130,75, "coral");
+  cloud(290,90, 230,75, "coral");
   fill("orange");
   sun(500,10,150);
-  Kite(); 
+  Kite("sienna","tomato");
 }
+    
+
+  function sun(sunx,suny,sunw){
+  push()
+  fill("orange");
+stroke("goldenrod"); 
+  circle(sunx,suny,sunw);
+  pop()
+}
+  function moon(moonx,moony,moonw){
+    push()
+    fill("slateblue");
+    noStroke();
+    circle(moonx,moony,moonw);
+    pop()
+    
+  }
+
+ 
+
 function NightScene(){
  
   background("gray");
@@ -177,26 +174,25 @@ function NightScene(){
   fill("black");  
   triangle(150,250,250,150,350,250);
   strokeWeight(5); 
-  ccloud(75,90,90,75);
-  ccloud(195,90,130,75);
-  sun(500,10,150);
-  Kite(); 
-}
-{
+  
+  
+
+
   // adding two windows to the house
   fill("gray");
   square(175,275,50);
-  fill("gray"); 
+
   square(270,275,50);
   fill("red"); 
   rect(223,350,50,100);
   stroke("tan");
   strokeWeight(5); 
   fill("gray")
-  cloud(75,90,90,75);
-  cloud(195,90,130,75);
+  cloud(75,90,90,75,"silver");
+  cloud(195,90,130,75,"silver");
+  cloud(290,90, 230,75, "silver");
    fill("gray");
-  sun(500,10,150);
-  Kite(); 
+  moon(500,10,150);
+  Kite("lightyellow","salmon"); 
 }
 
